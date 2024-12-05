@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply text-white bg-primary px-4 py-2 font-semibold rounded-md hover:shadow-md hover:bg-[#2C398F] focus-within:bg-[#232D70];
+  }
+  .btn-secondary {
+    @apply text-primary bg-[#B8BFE9] px-4 py-2 font-semibold rounded-md  hover:shadow-md  hover:bg-[#959FDE] focus-within:text-white focus-within:bg-[#4F5FC9];
+  }
+  .btn-secondary-yellow {
+    @apply text-white bg-secondary px-4 py-2 font-semibold rounded-md  hover:shadow-md  hover:bg-secondary-600 focus-within:text-white focus-within:bg-secondary-700;
+  }
+  .btn-primary-outline {
+    @apply text-primary bg-white border-2 px-4 py-2 font-semibold border-primary  rounded-md  hover:shadow-md  hover:text-[#2C398F] focus-within:text-[#232D70];
+  }
+  .input {
+    @apply rounded-md bg-white border-2 px-4 py-2  border-[#E4E4E4] focus:bg-[#E4E4E4] focus:border-[#959FDE] focus:outline-none focus-visible:border-[#959FDE]  focus-within:border-[#959FDE]   hover:bg-[#D2D2D2] hover:border-[#B8BFE9];
+  }
+}
