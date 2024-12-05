@@ -74,9 +74,13 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-xl">Newsletter</h3>
             <div className="flex flex-col gap-3 w-full items-center justify-center">
               <p>Subscribe for Our Newsletter</p>
-              <div className="flex flex-col md:flex-row justify-center gap-2 w-full">
-                <input type="text" className="input" />
-                <button className="btn-primary-outline">subscribe</button>
+              <div className="flex flex-col  justify-center gap-2 w-full max-w-sm">
+                <input
+                  type="text"
+                  className="input "
+                  placeholder="Enter Your Email"
+                />
+                <button className="btn-primary-outline ">subscribe</button>
               </div>
             </div>
           </div>{" "}

@@ -156,7 +156,7 @@ const Home: React.FC = () => {
             {/* Hero-Banner */}
             <div className="relative py-4 flex flex-col gap-6">
               <div className="absolute inset-0 bg-[url('/images/heroBanner.png')] bg-cover  opacity-10"></div>
-              <div className="min-h-20 mt-5 lg:mt-10"></div>
+              <div className="min-h-20  lg:mt-5"></div>
               <div className="container mx-auto h-full py-3 flex flex-col gap-6 relative z-10">
                 <div className="py-2 gap-4 flex flex-col text-center">
                   <div className="flex flex-col gap-1  text-5xl lg:text-6xl font-semibold">
@@ -204,7 +204,7 @@ const Home: React.FC = () => {
                     className={`bg-[url('/images/gallery5.png')]  bg-cover bg-center w-[360px] h-[360px] flex-1 transition-all ease-in-out duration-700 rounded-[10px] p-2 hover:flex-[2] `}
                   ></div>
                 </div>
-                <div className="lg:hidden">
+                <div className="lg:hidden px-2">
                   <ContainerCarousel
                     data={[gallery1, gallery2, gallery3, gallery4, gallery5]}
                   />
@@ -360,7 +360,7 @@ const Home: React.FC = () => {
                 <img src={indicatorImage} alt="" />
               </div>
             </div>
-            <div className="slickCarosoul h-96 w-[300px] ">
+            <div className="slickCarosoul h-96 w-[300px] px-2 ">
               <TestimonalSlider data={testimonalData} />
             </div>
           </div>

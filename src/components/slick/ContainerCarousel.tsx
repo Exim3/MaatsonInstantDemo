@@ -13,7 +13,7 @@ export const ContainerCarousel: React.FC<{
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1000, // For tablet-sized screens (<=900px)
+        breakpoint: 1040, // For tablet-sized screens (<=900px)
         settings: {
           slidesToShow: 2, // Show 2 slides on tablet
           slidesToScroll: 1, // Scroll 2 slides at a time
