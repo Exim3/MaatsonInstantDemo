@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import gallery1 from "/images/gallery1.png";
+import gallery2 from "/images/gallery2.png";
+import gallery3 from "/images/gallery3.png";
+import gallery4 from "/images/gallery4.png";
+import gallery5 from "/images/gallery5.png";
+
 import featureIcon1 from "/images/featureIcon1.png";
 import featureIcon2 from "/images/featureIcon2.png";
 import featureIcon3 from "/images/featureIcon3.png";
@@ -20,6 +26,7 @@ import {
   SummaryMinusIcon,
 } from "../../components/icons";
 import { TestimonalSlider } from "../../components/slick/TestimonalSlick";
+import { ContainerCarousel } from "../../components/slick/ContainerCarousel";
 
 const Home: React.FC = () => {
   const featureBoxes = [
@@ -149,7 +156,7 @@ const Home: React.FC = () => {
             {/* Hero-Banner */}
             <div className="relative py-4 flex flex-col gap-6">
               <div className="absolute inset-0 bg-[url('/images/heroBanner.png')] bg-cover  opacity-10"></div>
-              <div className="min-h-20 mt-10"></div>
+              <div className="min-h-20 mt-5 lg:mt-10"></div>
               <div className="container mx-auto h-full py-3 flex flex-col gap-6 relative z-10">
                 <div className="py-2 gap-4 flex flex-col text-center">
                   <div className="flex flex-col gap-1  text-5xl lg:text-6xl font-semibold">
@@ -196,6 +203,11 @@ const Home: React.FC = () => {
                   <div
                     className={`bg-[url('/images/gallery5.png')]  bg-cover bg-center w-[360px] h-[360px] flex-1 transition-all ease-in-out duration-700 rounded-[10px] p-2 hover:flex-[2] `}
                   ></div>
+                </div>
+                <div className="lg:hidden">
+                  <ContainerCarousel
+                    data={[gallery1, gallery2, gallery3, gallery4, gallery5]}
+                  />
                 </div>
               </div>
             </div>
