@@ -105,7 +105,7 @@ const Header: React.FC = () => {
             <div className="lg:hidden   rounded-2xl flex items-center gap-4 justify-center px-3 py-2 bg-white">
               <span
                 onClick={() => setHamburgerShow((prev) => !prev)}
-                className={` active:shadow-primary-sd hover:rounded-lg p-3 `}
+                className={`  p-3 `}
               >
                 <HamburgerIcon size={20} />
               </span>
