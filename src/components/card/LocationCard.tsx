@@ -1,5 +1,5 @@
 import React from "react";
-import { PhoneIcon } from "../icons";
+import { LocationIcon } from "../icons";
 
 const LocationCard: React.FC<{
   title: string;
@@ -15,7 +15,7 @@ const LocationCard: React.FC<{
       <div className="flex flex-col gap-6 text-start">
         <div className="flex items-center gap-4 justify-start">
           <span>
-            <PhoneIcon />
+            {isBgPrimary ? <LocationIcon color={"white"} /> : <LocationIcon />}
           </span>
           <h4
             className={`${
