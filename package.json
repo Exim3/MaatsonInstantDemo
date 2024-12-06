@@ -9,6 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "homepage": ".",
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "@types/react-toastify": "^4.1.0",
