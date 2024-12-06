@@ -105,9 +105,7 @@ const Header: React.FC = () => {
             <div className="lg:hidden   rounded-2xl flex items-center gap-4 justify-center px-3 py-2 bg-white">
               <span
                 onClick={() => setHamburgerShow((prev) => !prev)}
-                className={`hover:shadow-secondary-sd active:shadow-primary-sd hover:rounded-lg p-3 ${
-                  isHamburgerShow && "shadow-secondary-sd"
-                }`}
+                className={` active:shadow-primary-sd hover:rounded-lg p-3 `}
               >
                 <HamburgerIcon size={20} />
               </span>
@@ -117,6 +115,7 @@ const Header: React.FC = () => {
               {isHamburgerShow && (
                 <ul
                   ref={hamburgerRef}
+                  onClick={closeHamburger}
                   className="absolute top-full right-5 rounded-lg shadow-tertiary-sd px-4 py-3 max-w-[180px] bg-white flex flex-col w-full border"
                 >
                   {/* Home Link */}
