@@ -21,6 +21,11 @@ export default {
       },
     },
     extend: {
+      spacing: {
+        72: "18rem", // Adds a custom spacing value
+        84: "21rem", // Adds another custom spacing value
+        96: "24rem", // Adds another custom spacing value
+      },
       colors: {
         primary: "#3747b2",
         "primary-100": "#B8BFE9",

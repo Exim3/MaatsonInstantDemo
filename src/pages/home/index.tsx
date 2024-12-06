@@ -4,7 +4,6 @@ import gallery2 from "/images/gallery2.png";
 import gallery3 from "/images/gallery3.png";
 import gallery4 from "/images/gallery4.png";
 import gallery5 from "/images/gallery5.png";
-
 import featureIcon1 from "/images/featureIcon1.png";
 import featureIcon2 from "/images/featureIcon2.png";
 import featureIcon3 from "/images/featureIcon3.png";
@@ -18,7 +17,7 @@ import design5 from "/images/design5.png";
 import design6 from "/images/design6.png";
 import truck from "/images/truck.png";
 import indicatorImage from "/images/indicatorImage.png";
-import { DesignBox, FeatureBox } from "../../components/boxModals";
+import { DesignBox, FeatureBox } from "../../components/box";
 import {
   AdvantageIcon,
   ExploreIcon,

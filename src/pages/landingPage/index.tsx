@@ -6,7 +6,7 @@ import Footer from "../../components/footer";
 const LandingPage: React.FC = () => {
   return (
     <>
-      <div className=" bg-white font-roboto">
+      <div className=" bg-white font-roboto flex flex-col gap-6">
         <Header />
         <Outlet />
         <Footer />

@@ -42,3 +42,25 @@ export const DesignBox: React.FC<{
     </>
   );
 };
+export const CoreValueBox: React.FC<{
+  title: string;
+  img: string;
+  content: string;
+}> = ({ img, title, content }) => {
+  return (
+    <>
+      <div className="bg-gradient-to-br from-[#FCEED2]  to-[#B8BFE9] order bg-white  h-auto rounded-md w-full max-w-xs">
+        <div className=" flex flex-col gap-4  border-4 border-white border-opacity-40 p-4 rounded-md h-full ">
+          <div>
+            {" "}
+            <img src={img} alt={title} className="text-[10px] object-cover" />
+          </div>
+          <div className="flex flex-col gap-1 w-full">
+            <h4 className="text-2xl text-baseBlack font-semibold">{title}</h4>
+            <p className="text-neutral-900">{content}</p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
