@@ -33,7 +33,7 @@ const LocationCard: React.FC<{
           {content}
         </p>
       </div>
-      <button className="btn-secondary border-2 border-primary bg-white">
+      <button className="btn-secondary border-2 border-primary bg-white hover:text-white">
         Get Directions
       </button>
     </div>
