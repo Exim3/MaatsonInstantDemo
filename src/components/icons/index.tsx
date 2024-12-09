@@ -409,3 +409,24 @@ export const LocationIcon: React.FC<IconProps> = ({
     </svg>
   );
 };
+export const FreedomIcon: React.FC<IconProps> = ({
+  color = "#EEAA1F",
+  size = 24,
+}) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 72 72"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M14.5439 36L0 27.5962L10.7197 9.03541L25.272 17.4247L25.2802 0.631592H46.7198L46.728 17.4247L61.2802 9.03541L72 27.5962L57.456 36L72 44.4038L61.2802 62.9646L46.728 54.5754L46.7198 71.3684H25.2802L25.272 54.5754L10.7197 62.9646L0 44.4038L14.5439 36Z"
+        fill={color}
+      />
+    </svg>
+  );
+};

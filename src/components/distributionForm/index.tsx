@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { EmailIcon, PhoneIcon, TelephoneIcon } from "../icons";
-import indicatorImage from "/images/indicatorImage.png";
 import GroupField from "../groupField";
 
-const ContactSection: React.FC = () => {
+const DistributorShip: React.FC = () => {
+  const [isOwnBusiness, setOwnBusiness] = useState<boolean>(true);
   return (
     <>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:flex-row justify-between gap-16">
@@ -13,13 +13,12 @@ const ContactSection: React.FC = () => {
               Contact Us
             </p>
             <h3 className="text-4xl md:text-5xl font-semibold ">
-              Your Dream Container Home is Just a Message Away!
+              Become a Distributor of Maatson Instant Homes and Offices{" "}
             </h3>
           </div>
           <p className="text-xl">
-            Ready to take the next step towards your dream container home? Fill
-            out the form below, and our team will assist you in turning your
-            vision into reality!
+            Join us in delivering innovative and sustainable living and working
+            solutions to your community.
           </p>{" "}
           <div className="flex-col flex gap-3">
             <div className="flex items-center gap-4">
@@ -50,15 +49,14 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="text-center mx-auto">
-            <img src={indicatorImage} alt="" />
-          </div>
         </div>
         <form
           action=""
           className="p-4 rounded-xl shadow-primary-sd flex flex-col gap-6"
         >
-          <h2 className="text-3xl font-semibold text-center">Contact Form</h2>
+          <h2 className="text-3xl font-semibold text-center">
+            Distributorship form
+          </h2>
           <div className="flex flex-col gap-4">
             <GroupField
               label={"Full Name"}
@@ -82,29 +80,65 @@ const ContactSection: React.FC = () => {
               type={"phone"}
             />
             <GroupField
-              label={"Location"}
+              label={"City, State"}
               name={"location"}
               value={""}
               placeholder={"Enter Your Location"}
               type={"text"}
             />
-            <GroupField
-              label={"Preferred for Contact "}
-              name={"preferredContact"}
-              value={""}
-              placeholder={""}
-              type={"dropdown"}
-              options={[{ label: "", value: "" }]}
-              selectValue={"Choose Preferred contact method"}
-            />
-            <GroupField
-              label={"Query"}
-              name={"query"}
-              value={""}
-              placeholder={"Enter Your Query"}
-              type={"textArea"}
-              optionalTag
-            />
+            <div className={`flex flex-col gap-4 `}>
+              <label htmlFor="">Select Your Professional Status</label>
+              <div className="flex items-center gap-4">
+                <span
+                  className={`px-3 py-2 rounded-md border-2 ${
+                    isOwnBusiness
+                      ? "text-primary border-primary"
+                      : " border-neutral-200"
+                  }`}
+                  onClick={() => setOwnBusiness((prev) => !prev)}
+                >
+                  Business owner
+                </span>
+                <span
+                  className={`px-3 py-2 rounded-md border-2  ${
+                    isOwnBusiness
+                      ? "border-neutral-200 "
+                      : "text-primary border-primary"
+                  }`}
+                  onClick={() => setOwnBusiness((prev) => !prev)}
+                >
+                  Working Profession
+                </span>
+              </div>
+            </div>
+            {isOwnBusiness ? (
+              <>
+                <GroupField
+                  label={
+                    "Business type (Please select the kind of business you operate)"
+                  }
+                  name={"businessType"}
+                  value={""}
+                  placeholder={" Enter Your Business type "}
+                  type={"text"}
+                />
+                <GroupField
+                  label={"Company Name"}
+                  name={"companyName"}
+                  value={""}
+                  placeholder={" Enter Your Company Name"}
+                  type={"text"}
+                />
+              </>
+            ) : (
+              <GroupField
+                label={"Tell Us About Your Profession"}
+                name={"profession"}
+                value={""}
+                placeholder={" Enter Your Profession"}
+                type={"text"}
+              />
+            )}
           </div>
           <input
             type="submit"
@@ -117,4 +151,4 @@ const ContactSection: React.FC = () => {
   );
 };
 
-export default ContactSection;
+export default DistributorShip;
