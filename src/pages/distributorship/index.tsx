@@ -76,8 +76,8 @@ const Distributorship: React.FC = () => {
                   Benefits of Becoming a Maatson Instant Homes Distributor{" "}
                 </h3>{" "}
               </div>
-              <div className="flex items-center gap-6">
-                <div className="px-4 py-6 rounded-lg bg-white flex items-center gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 items-center  gap-6">
+                <div className="px-4 py-6 rounded-lg bg-white flex items-center w-full h-full border-2 border-primary   gap-6">
                   <span
                     style={{
                       textShadow:
@@ -98,7 +98,7 @@ const Distributorship: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                <div className="px-4 py-6 rounded-lg bg-white flex items-center gap-6">
+                <div className="px-4 py-6 rounded-lg bg-white flex items-center w-full h-full border-2 border-primary gap-6">
                   <span
                     style={{
                       textShadow:
