@@ -51,8 +51,8 @@ const Contact: React.FC = () => {
         />
         <ContactSection />
         {/* location */}
-        <div className="location py-6 container mx-auto bg-neutral-100 text-center flex flex-col gap-8">
-          <div className="flex flex-col gap-3">
+        <div className="location py-6 bg-neutral-100 text-center flex flex-col gap-8">
+          <div className="flex flex-col gap-3  container mx-auto">
             <p className="text-primary-700 font-semibold text-2xl   font-robotoSlab ">
               Location{" "}
             </p>
