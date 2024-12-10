@@ -26,8 +26,16 @@ import {
 } from "../../components/icons";
 import { TestimonalSlider } from "../../components/slick/TestimonalSlick";
 import { ContainerCarousel } from "../../components/slick/ContainerCarousel";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleNavigateDistributor = () => {
+    navigate("/distributorship", {
+      state: { scrollTo: "distributorshipDetail-section" },
+    }); // Pass state with scroll target
+  };
   const featureBoxes = [
     {
       title: "Eco Friendly Assembly",
@@ -176,10 +184,12 @@ const Home: React.FC = () => {
                   </p>
                   <div className="flex flex-col gap-3">
                     <div className="flex gap-4 items-center justify-center">
-                      <button className="btn-primary">Inquiry Now</button>
-                      <button className="btn-primary-outline">
+                      <Link to={"/enquiryform"} className="btn-primary">
+                        Enquiry Now
+                      </Link>
+                      <Link to={"/models"} className="btn-primary-outline">
                         Explore Our Designs
-                      </button>
+                      </Link>
                     </div>
                     <p className="text-accent-400">
                       Easy assembly, ready fast! Contact us for details!
@@ -273,7 +283,10 @@ const Home: React.FC = () => {
                     No Deposit ,No Advance Required!{" "}
                   </p>
                   <div>
-                    <button className="btn-secondary-yellow ">
+                    <button
+                      className="btn-secondary-yellow "
+                      onClick={handleNavigateDistributor}
+                    >
                       View Distributor Details
                     </button>
                   </div>

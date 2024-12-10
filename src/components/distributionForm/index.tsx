@@ -6,7 +6,10 @@ const DistributorShip: React.FC = () => {
   const [isOwnBusiness, setOwnBusiness] = useState<boolean>(true);
   return (
     <>
-      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:flex-row justify-between gap-16">
+      <div
+        id="distributorDetails"
+        className=" container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:flex-row justify-between gap-16"
+      >
         <div className="flex flex-col gap-6 text-baseBlack ">
           <div className="flex flex-col gap-3">
             <p className="text-primary-700 font-semibold text-2xl   font-robotoSlab ">

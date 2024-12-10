@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import distributionImage2 from "/images/distributerImage2.png";
 import { FreedomIcon } from "../../components/icons";
 import DistributorShip from "../../components/distributionForm";
+import { useLocation } from "react-router-dom";
 
 const Distributorship: React.FC = () => {
+  const location = useLocation();
+  const distributorshipRef = useRef<HTMLDivElement>(null); // Reference to the second section
+
+  useEffect(() => {
+    // Check if there is a scrollTo state and if it matches 'second-section'
+    if (
+      location.state?.scrollTo === "distributorshipDetails" &&
+      distributorshipRef.current
+    ) {
+      window.scrollTo({
+        top: distributorshipRef.current.offsetTop, // Scroll to the second section
+        behavior: "smooth",
+      });
+    }
+  }, [location]);
   return (
     <>
       <div className="flex flex-col gap-6">
@@ -144,7 +160,9 @@ const Distributorship: React.FC = () => {
             </div>
           </div>
           {/* Distributorship form */}
-          <DistributorShip />
+          <div ref={distributorshipRef}>
+            <DistributorShip />
+          </div>
         </div>
       </div>
     </>
