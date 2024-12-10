@@ -11,7 +11,7 @@ const Distributorship: React.FC = () => {
   useEffect(() => {
     // Check if there is a scrollTo state and if it matches 'second-section'
     if (
-      location.state?.scrollTo === "distributorshipDetails" &&
+      location.state?.scrollTo === "distributorshipDetail-section" &&
       distributorshipRef.current
     ) {
       window.scrollTo({

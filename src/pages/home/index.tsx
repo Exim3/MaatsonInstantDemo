@@ -345,9 +345,12 @@ const Home: React.FC = () => {
                 ))}
               </div>
               <div className="flex items-center justify-center gap-3 cursor-pointer">
-                <button className="text-center text-primary font-semibold px-4 py-3 ">
+                <Link
+                  to={"/models"}
+                  className="text-center text-primary font-semibold px-4 py-3 "
+                >
                   Explore More
-                </button>
+                </Link>
                 <ExploreIcon size={16} />
               </div>
             </div>
@@ -409,7 +412,9 @@ const Home: React.FC = () => {
               </span>
             </h3>{" "}
             <div>
-              <button className="btn-primary">Contact Now</button>
+              <Link to={"/contact"} className="btn-primary">
+                Contact Now
+              </Link>
             </div>
           </div>{" "}
         </div>
