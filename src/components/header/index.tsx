@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import logo from "/images/logo.png";
 import { NavLink } from "react-router-dom";
 import { HamburgerIcon } from "../icons";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [isHamburgerShow, setHamburgerShow] = useState<boolean>(false);
@@ -9,7 +10,6 @@ const Header: React.FC = () => {
   const closeHamburger = () => {
     setHamburgerShow(false);
   };
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -98,7 +98,9 @@ const Header: React.FC = () => {
               </NavLink>
 
               {/* Inquire Now Button */}
-              <button className="btn-primary px-4 py-2 ">Inquire Now</button>
+              <Link to={"/enquiryform"} className="btn-primary px-4 py-2 ">
+                Inquire Now
+              </Link>
             </ul>
 
             {/* mobile view */}
@@ -109,9 +111,12 @@ const Header: React.FC = () => {
               >
                 <HamburgerIcon size={20} />
               </span>
-              <button className="hidden sm:block btn-primary px-4 py-2 ">
+              <Link
+                className="hidden sm:block btn-primary px-4 py-2 "
+                to={"/enquiryform"}
+              >
                 Inquire Now
-              </button>
+              </Link>
               {isHamburgerShow && (
                 <ul
                   ref={hamburgerRef}

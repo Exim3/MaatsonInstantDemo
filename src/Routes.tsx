@@ -7,6 +7,7 @@ const About = lazy(() => import("./pages/about"));
 const Contact = lazy(() => import("./pages/contact"));
 const Distributorship = lazy(() => import("./pages/distributorship"));
 const Models = lazy(() => import("./pages/models"));
+const Enquiry = lazy(() => import("./pages/enquiry"));
 
 const AllRoutes: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const AllRoutes: React.FC = () => {
             <Route path="distributorship" element={<Distributorship />} />
             <Route path="models" element={<Models />} />
           </Route>
+          <Route path="/enquiryform" element={<Enquiry />}></Route>
         </Routes>
       </Suspense>
     </>
