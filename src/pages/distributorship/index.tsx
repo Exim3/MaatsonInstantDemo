@@ -6,16 +6,15 @@ import { useLocation } from "react-router-dom";
 
 const Distributorship: React.FC = () => {
   const location = useLocation();
-  const distributorshipRef = useRef<HTMLDivElement>(null); // Reference to the second section
+  const distributorshipRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Check if there is a scrollTo state and if it matches 'second-section'
     if (
       location.state?.scrollTo === "distributorshipDetail-section" &&
       distributorshipRef.current
     ) {
       window.scrollTo({
-        top: distributorshipRef.current.offsetTop, // Scroll to the second section
+        top: distributorshipRef.current.offsetTop,
         behavior: "smooth",
       });
     }
@@ -143,7 +142,6 @@ const Distributorship: React.FC = () => {
                   Requirements of Becoming a Maatson Instant Homes Distributor{" "}
                 </h3>{" "}
               </div>
-
               <div className="px-4 py-6 rounded-lg border-2 border-secondary  bg-white flex items-center gap-6">
                 <span className="  text-center ">
                   <FreedomIcon size={72} />

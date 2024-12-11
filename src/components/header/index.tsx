@@ -43,7 +43,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "border-l-4 border-primary text-primary  px-4 py-2"
-                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                 }
               >
                 Home
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "border-l-4 border-primary text-primary  px-4 py-2"
-                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                 }
               >
                 Distributorship
@@ -67,7 +67,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "border-l-4 border-primary text-primary  px-4 py-2"
-                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                 }
               >
                 Our Models
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "border-l-4 border-primary text-primary  px-4 py-2"
-                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                 }
               >
                 About Us
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "border-l-4 border-primary text-primary  px-4 py-2"
-                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                    : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                 }
               >
                 Contact Us
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
 
               {/* Inquire Now Button */}
               <Link to={"/enquiryform"} className="btn-primary px-4 py-2 ">
-                Inquire Now
+                Enquire Now
               </Link>
             </ul>
 
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
                 className="hidden sm:block btn-primary px-4 py-2 "
                 to={"/enquiryform"}
               >
-                Inquire Now
+                Enquire Now
               </Link>
               {isHamburgerShow && (
                 <ul
@@ -129,7 +129,7 @@ const Header: React.FC = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "border-l-4 border-primary text-primary  px-4 py-2"
-                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                     }
                   >
                     Home
@@ -141,7 +141,7 @@ const Header: React.FC = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "border-l-4 border-primary text-primary  px-4 py-2"
-                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                     }
                   >
                     Distributorship
@@ -153,7 +153,7 @@ const Header: React.FC = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "border-l-4 border-primary text-primary  px-4 py-2"
-                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                     }
                   >
                     Our Models
@@ -165,7 +165,7 @@ const Header: React.FC = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "border-l-4 border-primary text-primary  px-4 py-2"
-                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all  duration-700 ease-in-out"
                     }
                   >
                     About Us
@@ -177,7 +177,7 @@ const Header: React.FC = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "border-l-4 border-primary text-primary  px-4 py-2"
-                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2"
+                        : "border-l-4 border-white hover:border-primary hover:text-primary hover:bg-primary-to-white px-4 py-2 transition-all duration-700 ease-in-out"
                     }
                   >
                     Contact Us
