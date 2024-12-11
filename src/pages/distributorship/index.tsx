@@ -13,12 +13,16 @@ const Distributorship: React.FC = () => {
       location.state?.scrollTo === "distributorshipDetail-section" &&
       distributorshipRef.current
     ) {
-      window.scrollTo({
-        top: distributorshipRef.current.offsetTop,
-        behavior: "smooth",
+      // Using requestAnimationFrame for better synchronization with the browser's render cycle
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: distributorshipRef.current?.offsetTop,
+          behavior: "smooth",
+        });
       });
     }
   }, [location]);
+
   return (
     <>
       <div className="flex flex-col gap-6">
