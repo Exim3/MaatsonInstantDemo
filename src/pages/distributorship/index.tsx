@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import distributionImage2 from "/images/distributerImage2.png";
 import { FreedomIcon } from "../../components/icons";
 import DistributorShip from "../../components/distributionForm";
+import DirectorImage from "/images/director.png";
 import { useLocation } from "react-router-dom";
 
 const Distributorship: React.FC = () => {
@@ -28,7 +29,7 @@ const Distributorship: React.FC = () => {
       <div className="flex flex-col gap-6">
         <div className="min-h-20 mt-5 lg:mt-10 "></div>
         {/* article1 */}
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2  gap-3 text-baseBlack">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2  gap-10 text-baseBlack">
           <div className="flex flex-col gap-6  font-semibold text-center lg:text-start">
             <h5 className="text-secondary font-semibold text-2xl   font-robotoSlab ">
               Grow with Maatson{" "}
@@ -53,8 +54,12 @@ const Distributorship: React.FC = () => {
               </span>
             </div>
           </div>
-          <div>
-            <img src="" alt="distributer" />
+          <div className="w-full h-full ">
+            <img
+              src={DirectorImage}
+              alt="distributer"
+              className="object-cover w-[560px] mx-auto h-full rounded-xl"
+            />
           </div>
         </div>
         {/* article2 */}
