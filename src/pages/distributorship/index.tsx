@@ -45,7 +45,7 @@ const Distributorship: React.FC = () => {
             <div className="text-center">
               <button className="btn-secondary-yellow">Contact Now</button>
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm">
               <span className="border-2 bg-neutral-100 text-primary border-primary-100 px-4 py-2 rounded-2xl">
                 No Deposit Required
               </span>
