@@ -40,13 +40,20 @@ const ContactSection: React.FC = () => {
       preferred_contact: formData.preferredContact,
       query: formData.query,
     };
+    const serviceId =
+      import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.EMAILJS_SERVICE_ID;
+    const templateId =
+      import.meta.env.VITE_EMAILJS_CONTACTFORM_TEMPLATE_ID ||
+      process.env.EMAILJS_CONTACTFORM_TEMPLATE_ID;
+    const userId =
+      import.meta.env.VITE_EMAILJS_USER_ID || process.env.EMAILJS_USER_ID;
     // Use EmailJS to send the form data
     emailjs
       .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Service ID
-        import.meta.env.VITE_EMAILJS_CONTACTFORM_TEMPLATE_ID, // Template ID
+        serviceId,
+        templateId, // Template ID
         formDataToSend, // Form data to send
-        import.meta.env.VITE_EMAILJS_USER_ID // User ID (Public Key)
+        userId // User ID (Public Key)
       )
       .then(
         (result) => {
