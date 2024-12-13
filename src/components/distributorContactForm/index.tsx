@@ -1,14 +1,16 @@
 import React from "react";
 import GroupField from "../groupField";
 
-const EnquiryForm: React.FC = () => {
+const DistributerContactForm: React.FC = () => {
   return (
     <>
       <form
         action=""
         className="p-4 rounded-xl shadow-primary-sd flex flex-col gap-6"
       >
-        <h2 className="text-3xl font-semibold text-center">Enquiry form</h2>
+        <h2 className="text-3xl font-semibold text-center">
+          Distributer Contact Form
+        </h2>
         <div className="flex flex-col gap-4">
           <GroupField
             label={"Full Name"}
@@ -35,19 +37,12 @@ const EnquiryForm: React.FC = () => {
             label={"Location"}
             name={"location"}
             value={""}
-            placeholder={"Enter Your Location"}
-            type={"text"}
-          />
-          <GroupField
-            label={"Modal Number "}
-            name={"modalNumber"}
-            value={""}
-            placeholder={""}
             type={"dropdown"}
-            optionalTag
+            placeholder={""}
+            selectValue={"Choose Location"}
             options={[{ label: "", value: "" }]}
-            selectValue={"Choose Modal Number"}
           />
+
           <GroupField
             label={"Requirement"}
             name={"requirement"}
@@ -67,4 +62,4 @@ const EnquiryForm: React.FC = () => {
   );
 };
 
-export default EnquiryForm;
+export default DistributerContactForm;

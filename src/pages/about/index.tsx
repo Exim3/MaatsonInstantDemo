@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Banner from "../../components/banner/Banner";
 import bannerImage from "/images/gallery5.png";
 import coreValue1 from "/images/coreValue1.png";
@@ -9,6 +9,9 @@ import { CoreValueBox } from "../../components/box";
 import { ExploreIcon } from "../../components/icons";
 
 const About: React.FC = () => {
+  useEffect(() => {
+    document.title = "About Us";
+  }, []);
   return (
     <>
       <div className="flex flex-col gap-10">

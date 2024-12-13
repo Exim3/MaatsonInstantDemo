@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Banner from "../../components/banner/Banner";
 import modelBanner from "/images/modelBanner.png";
 import model1 from "/images/model1.png";
@@ -62,6 +62,9 @@ const Models: React.FC = () => {
     },
     { image: model16, modelNumber: "4070", usages: "House, Hotels, Resort" },
   ];
+  useEffect(() => {
+    document.title = "Our Models";
+  }, []);
 
   return (
     <>

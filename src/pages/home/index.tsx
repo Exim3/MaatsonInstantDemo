@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import gallery1 from "/images/gallery1.png";
 import gallery2 from "/images/gallery2.png";
 import gallery3 from "/images/gallery3.png";
@@ -32,9 +32,10 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNavigateDistributor = () => {
-    navigate("/distributorship", {
-      state: { scrollTo: "distributorshipDetail-section" },
-    }); // Pass state with scroll target
+    // navigate("/distributorship", {
+    //   state: { scrollTo: "distributorshipDetail-section" },
+    // }); // Pass state with scroll target
+    navigate("/distributorship");
   };
   const featureBoxes = [
     {
@@ -154,6 +155,9 @@ const Home: React.FC = () => {
       )
     );
   };
+  useEffect(() => {
+    document.title = "Maatson Instant Homes";
+  }, []);
   return (
     <>
       <div className="flex flex-col gap-8">

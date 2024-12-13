@@ -10,6 +10,7 @@ const Distributorship: React.FC = () => {
   const distributorshipRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    document.title = "Distributorship";
     if (
       location.state?.scrollTo === "distributorshipDetail-section" &&
       distributorshipRef.current

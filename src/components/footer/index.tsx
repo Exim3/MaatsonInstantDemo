@@ -25,7 +25,12 @@ const Footer: React.FC = () => {
               <div className="flex flex-col w-full gap-3">
                 <div className="flex gap-3 items-center justify-center lg:justify-start">
                   <YouTubeIcon size={20} color="#232D70" />
-                  <p>Youtube</p>
+                  <a
+                    href="https://www.youtube.com/@MAATSONMARITIME"
+                    target="_blank"
+                  >
+                    <p>Youtube</p>
+                  </a>
                 </div>
                 <div className="flex gap-3 items-center justify-center lg:justify-start">
                   <LinkedInIcon size={20} color="#232D70" />

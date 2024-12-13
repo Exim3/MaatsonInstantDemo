@@ -42,6 +42,7 @@ const GroupField: React.FC<{
       {type === "textArea" ? (
         <textarea
           id={name}
+          name={name}
           value={value}
           placeholder={placeholder}
           className={`input ${inputStyle}`}
@@ -52,7 +53,7 @@ const GroupField: React.FC<{
           name={name}
           id={name}
           value={value}
-          className={`input text-neutral text-xs focus:bg-white ${inputStyle}`}
+          className={`input p-3 text-neutral text-xs focus:bg-white ${inputStyle}`}
           onChange={onChange}
         >
           {options && options.length > 0 ? (
@@ -72,6 +73,7 @@ const GroupField: React.FC<{
         <input
           type={type}
           id={name}
+          name={name}
           value={value}
           placeholder={placeholder}
           className={`input ${inputStyle}`}

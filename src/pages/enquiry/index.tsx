@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CancelIcon } from "../../components/icons";
 import EnquiryForm from "../../components/enquiryForm";
 import { useNavigate } from "react-router";
 
 const Enquiry: React.FC = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    document.title = "Enquiry Form";
+  }, []);
   return (
     <>
       {" "}

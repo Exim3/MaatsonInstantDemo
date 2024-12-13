@@ -1,9 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import { EmailIcon, PhoneIcon, TelephoneIcon } from "../icons";
 import indicatorImage from "/images/indicatorImage.png";
+import emailjs from "emailjs-com";
+
 import GroupField from "../groupField";
+import { toast } from "react-toastify";
 
 const ContactSection: React.FC = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    mobile: "",
+    location: "",
+    preferredContact: "",
+    query: "",
+  });
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Create FormData object to send to EmailJS
+    const formDataToSend = {
+      from_name: formData.fullName,
+      from_email: formData.email,
+      mobile: formData.mobile,
+      location: formData.location,
+      preferred_contact: formData.preferredContact,
+      query: formData.query,
+    };
+    // Use EmailJS to send the form data
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Service ID
+        import.meta.env.VITE_EMAILJS_CONTACTFORM_TEMPLATE_ID, // Template ID
+        formDataToSend, // Form data to send
+        import.meta.env.VITE_EMAILJS_USER_ID // User ID (Public Key)
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("email sent successfully");
+        },
+        (error) => {
+          console.error(error.text);
+          toast.error("There was an error sending your message.");
+        }
+      );
+
+    // // Optionally, reset the form after submission
+    // setFormData({
+    //   fullName: "",
+    //   email: "",
+    //   mobile: "",
+    //   location: "",
+    //   preferredContact: "",
+    //   query: "",
+    // });
+  };
+
   return (
     <>
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 lg:flex-row justify-between gap-16">
@@ -55,7 +121,7 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
         <form
-          action=""
+          onSubmit={handleSubmit}
           className="p-4 rounded-xl shadow-primary-sd flex flex-col gap-6"
         >
           <h2 className="text-3xl font-semibold text-center">Contact Form</h2>
@@ -63,44 +129,53 @@ const ContactSection: React.FC = () => {
             <GroupField
               label={"Full Name"}
               name={"fullName"}
-              value={""}
+              value={formData.fullName}
+              onChange={handleChange}
               placeholder={"Enter Your Name"}
               type={"text"}
             />
             <GroupField
               label={"Email"}
               name={"email"}
-              value={""}
+              value={formData.email}
+              onChange={handleChange}
               placeholder={"Enter Your Email"}
               type={"email"}
             />
             <GroupField
               label={"Mobile Number"}
               name={"mobile"}
-              value={""}
+              value={formData.mobile}
+              onChange={handleChange}
               placeholder={"Enter Your Mobile Number"}
               type={"phone"}
             />
             <GroupField
               label={"Location"}
               name={"location"}
-              value={""}
+              value={formData.location}
+              onChange={handleChange}
               placeholder={"Enter Your Location"}
               type={"text"}
             />
             <GroupField
               label={"Preferred for Contact "}
               name={"preferredContact"}
-              value={""}
+              value={formData.preferredContact}
+              onChange={handleChange}
               placeholder={""}
               type={"dropdown"}
-              options={[{ label: "", value: "" }]}
+              options={[
+                { label: "Email", value: "email" },
+                { label: "Phone", value: "phone" },
+              ]}
               selectValue={"Choose Preferred contact method"}
             />
             <GroupField
               label={"Query"}
               name={"query"}
-              value={""}
+              value={formData.query}
+              onChange={handleChange}
               placeholder={"Enter Your Query"}
               type={"textArea"}
               optionalTag
