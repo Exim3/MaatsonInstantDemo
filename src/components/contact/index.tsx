@@ -48,13 +48,7 @@ const ContactSection: React.FC = () => {
     const userId =
       import.meta.env.VITE_EMAILJS_USER_ID || process.env.EMAILJS_USER_ID;
     // Use EmailJS to send the form data
-    console.log(
-      serviceId,
-      templateId, // Template ID
-      formDataToSend, // Form data to send
-      userId,
-      "data"
-    );
+
     emailjs
       .send(
         serviceId,
