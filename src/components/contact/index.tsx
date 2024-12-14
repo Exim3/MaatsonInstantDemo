@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { EmailIcon, PhoneIcon, TelephoneIcon } from "../icons";
 import indicatorImage from "/images/indicatorImage.png";
 import emailjs from "emailjs-com";
-
 import GroupField from "../groupField";
-import { toast } from "react-toastify";
+import useToast from "../../hooks/useToast";
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,23 +14,81 @@ const ContactSection: React.FC = () => {
     preferredContact: "",
     query: "",
   });
+  const [formError, setFormError] = useState({
+    fullName: "",
+    email: "",
+    mobile: "",
+    location: "",
+  });
+  const { successNotify, errorNotify } = useToast();
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
     const { name, value } = e.target;
-
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
+    handleFieldError(name, value);
+    if (name === "email") {
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      // Validate email using regex
+      if (!emailRegex.test(value)) {
+        setFormError((prev) => ({
+          ...prev,
+          email: "Please enter a valid email address",
+        }));
+      } else {
+        setFormError((prev) => ({ ...prev, email: "" }));
+      }
+    }
+  };
+  // Function to handle clearing field error
+  const handleFieldError = (name: string, value: any) => {
+    if (Object.keys(formError).filter((field) => field === name)) {
+      if (value) {
+        setFormError((prev) => ({
+          ...prev,
+          [name]: "", // Clear the error message for the field
+        }));
+      } else {
+        setFormError((prev) => ({
+          ...prev,
+          [name]: `please fill the ${name} `, // Clear the error message for the field
+        }));
+      }
+    }
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Create FormData object to send to EmailJS
+    let hasError = false;
+
+    // Loop through form data to check for any empty fields and set errors
+    Object.entries(formData).forEach(([key, value]) => {
+      if (key !== "query" && !value) {
+        // If the field is empty, set the error for this field
+        setFormError((prev) => ({
+          ...prev,
+          [key]: `Please fill the ${key}`,
+        }));
+        hasError = true;
+      }
+    });
+
+    if (formError.email) {
+      hasError = true;
+    }
+
+    // If there are any errors, prevent the form submission
+    if (hasError) {
+      return; // Do not submit if there are errors
+    }
+
+    // Proceed with form data submission after validation
     const formDataToSend = {
       from_name: formData.fullName,
       from_email: formData.email,
@@ -39,7 +96,10 @@ const ContactSection: React.FC = () => {
       location: formData.location,
       preferred_contact: formData.preferredContact,
       query: formData.query,
+      modal_number: "nil",
+      subject: "Contact Form",
     };
+
     const serviceId =
       import.meta.env.VITE_EMAILJS_SERVICE_ID || process.env.EMAILJS_SERVICE_ID;
     const templateId =
@@ -47,8 +107,8 @@ const ContactSection: React.FC = () => {
       process.env.EMAILJS_CONTACTFORM_TEMPLATE_ID;
     const userId =
       import.meta.env.VITE_EMAILJS_USER_ID || process.env.EMAILJS_USER_ID;
-    // Use EmailJS to send the form data
 
+    // Send the form data to EmailJS
     emailjs
       .send(
         serviceId,
@@ -59,23 +119,22 @@ const ContactSection: React.FC = () => {
       .then(
         (result) => {
           console.log(result.text);
-          toast.success("email sent successfully");
+          successNotify("Email Sent Successfully");
+          // Reset form after submission
+          setFormData({
+            fullName: "",
+            email: "",
+            mobile: "",
+            location: "",
+            preferredContact: "",
+            query: "",
+          });
         },
         (error) => {
           console.error(error.text);
-          toast.error("There was an error sending your message.");
+          errorNotify("There was an error sending your message.");
         }
       );
-
-    // // Optionally, reset the form after submission
-    // setFormData({
-    //   fullName: "",
-    //   email: "",
-    //   mobile: "",
-    //   location: "",
-    //   preferredContact: "",
-    //   query: "",
-    // });
   };
 
   return (
@@ -141,6 +200,7 @@ const ContactSection: React.FC = () => {
               onChange={handleChange}
               placeholder={"Enter Your Name"}
               type={"text"}
+              error={formError.fullName}
             />
             <GroupField
               label={"Email"}
@@ -149,6 +209,7 @@ const ContactSection: React.FC = () => {
               onChange={handleChange}
               placeholder={"Enter Your Email"}
               type={"email"}
+              error={formError.email}
             />
             <GroupField
               label={"Mobile Number"}
@@ -157,6 +218,7 @@ const ContactSection: React.FC = () => {
               onChange={handleChange}
               placeholder={"Enter Your Mobile Number"}
               type={"phone"}
+              error={formError.mobile}
             />
             <GroupField
               label={"Location"}
@@ -165,9 +227,10 @@ const ContactSection: React.FC = () => {
               onChange={handleChange}
               placeholder={"Enter Your Location"}
               type={"text"}
+              error={formError.location}
             />
             <GroupField
-              label={"Preferred for Contact "}
+              label={"Preferred for Contact"}
               name={"preferredContact"}
               value={formData.preferredContact}
               onChange={handleChange}

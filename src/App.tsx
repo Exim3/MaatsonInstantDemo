@@ -12,7 +12,11 @@ function App() {
     <>
       <Router>
         <AllRoutes />
-        <ToastContainer />
+        <ToastContainer
+          position="top-center"
+          hideProgressBar
+          style={{ padding: 0 }}
+        />
         <ScrollToTop />
       </Router>
     </>

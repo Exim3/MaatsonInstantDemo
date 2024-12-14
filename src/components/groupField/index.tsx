@@ -13,7 +13,7 @@ const GroupField: React.FC<{
   inputStyle?: string;
   labelStyle?: string;
   selectValue?: string;
-
+  error?: string;
   options?: { label: string; value: string | number }[];
   optionalTag?: boolean;
 }> = ({
@@ -29,6 +29,7 @@ const GroupField: React.FC<{
   optionalTag,
   options,
   selectValue,
+  error,
 }) => {
   return (
     <div className={`flex flex-col gap-2 ${style}`}>
@@ -53,7 +54,7 @@ const GroupField: React.FC<{
           name={name}
           id={name}
           value={value}
-          className={`input p-3 text-neutral text-xs focus:bg-white ${inputStyle}`}
+          className={`input p-3 text-blackbase font-semibold text-xs focus:bg-white ${inputStyle}`}
           onChange={onChange}
         >
           {options && options.length > 0 ? (
@@ -80,6 +81,7 @@ const GroupField: React.FC<{
           onChange={onChange}
         />
       )}
+      {error && <p className="text-xs text-error-300">{error}</p>}
     </div>
   );
 };

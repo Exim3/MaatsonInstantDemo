@@ -1,11 +1,13 @@
 import React from "react";
 import { StarOulineIcon, WhatsAppIcon } from "../icons";
+import { useNavigate } from "react-router";
 
 const ModelCard: React.FC<{
   image: string;
   modelNumber: string;
   usages: string;
 }> = ({ image, modelNumber, usages }) => {
+  const navigate = useNavigate();
   return (
     <div className="p-4 gap-6 grid grid-cols-1  lg:grid-cols-2 items-center bg-neutral-100 shadow-primary-sd rounded-xl">
       <div className="w-full h-full ">
@@ -43,11 +45,23 @@ const ModelCard: React.FC<{
           </div>
         </div>
         <div className="flex gap-2 items-center w-full justify-center text-center flex-wrap lg:flex-nowrap">
-          <div className="btn-primary w-full sm:flex-1"> Book Now</div>
-          <div className="btn-primary-outline flex items-center gap-2 w-full justify-center sm:flex-1">
-            <WhatsAppIcon />
-            <p> WhatsApp Now</p>
-          </div>
+          <button
+            onClick={() => navigate(`/enquiryform?query=Modal-${modelNumber}`)}
+            className="btn-primary w-full sm:flex-1"
+          >
+            {" "}
+            Book Now
+          </button>
+          <a
+            href={`https://wa.me/98796557?text="requirement Modal-${modelNumber}"`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="btn-primary-outline flex items-center gap-2 w-full justify-center sm:flex-1">
+              <WhatsAppIcon />
+              <p> WhatsApp Now</p>
+            </button>{" "}
+          </a>
         </div>
       </div>
     </div>
