@@ -56,8 +56,9 @@ const ModelCard: React.FC<{
             href={`https://wa.me/98796557?text="requirement Modal-${modelNumber}"`}
             target="_blank"
             rel="noopener noreferrer"
+            className="btn-primary-outline  w-full sm:flex-1"
           >
-            <button className="btn-primary-outline flex items-center gap-2 w-full justify-center sm:flex-1">
+            <button className="flex items-center gap-2 justify-center w-full">
               <WhatsAppIcon />
               <p> WhatsApp Now</p>
             </button>{" "}

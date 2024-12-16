@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 export const FeatureBox: React.FC<{
   img: string;
   title: string;
@@ -25,6 +27,8 @@ export const DesignBox: React.FC<{
   img: string;
   alt: string;
 }> = ({ img, modelNumber, alt }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="gap-3 p-4 order bg-white rounded-xl h-full">
@@ -35,7 +39,15 @@ export const DesignBox: React.FC<{
               <p className="text-neutral-700">Model Number</p>
               <h4 className="text-2xl text-baseBlack">{modelNumber}</h4>
             </div>
-            <button className="btn-primary w-full">Book Now</button>
+            <button
+              onClick={() =>
+                navigate(`/enquiryform?query=Modal-${modelNumber}`)
+              }
+              className="btn-primary w-full "
+            >
+              {" "}
+              Book Now
+            </button>{" "}
           </div>
         </div>
       </div>
