@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
                 <div className="flex gap-3 items-center justify-center lg:justify-start">
                   <LinkedInIcon size={20} color="#232D70" />
                   <a
-                    href="https://www.youtube.com/@MAATSONMARITIME"
+                    href="https://www.linkedin.com/company/maatsonmaritime/"
                     target="_blank"
                   >
                     <p>LinkedIn</p>
@@ -75,7 +75,13 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="flex gap-3 justify-center items-center lg:justify-start">
                   <InstagramIcon size={20} color="#232D70" />
-                  <p>Instagram</p>
+                  <a
+                    href="https://www.instagram.com/maatson_maritime?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    target="_blank"
+                  >
+                    {" "}
+                    <p>Instagram</p>
+                  </a>
                 </div>
                 <div className="flex gap-3 items-center justify-center lg:justify-start">
                   <FaceBookIcon size={20} color="#232D70" />
