@@ -23,7 +23,7 @@ const TermsAndConditions: React.FC = () => {
           </p>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
             1. Product Information and Customization
           </h4>{" "}
           <ul className="list-disc px-8">
@@ -43,7 +43,9 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">2. Payment Terms</h4>{" "}
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
+            2. Payment Terms
+          </h4>{" "}
           <ul className="list-disc px-8">
             <li>
               <p className="text-lg sm:text-2xl  text-neutral-1000">
@@ -65,7 +67,7 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
             3. Delivery and Installation
           </h4>{" "}
           <ul className="list-disc px-8">
@@ -104,7 +106,7 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
             4. Warranty and Maintenance
           </h4>{" "}
           <ul className="list-disc px-8">
@@ -131,7 +133,9 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">5. Permits and Compliance</h4>{" "}
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
+            5. Permits and Compliance
+          </h4>{" "}
           <ul className="list-disc px-8">
             <li>
               <p className="text-lg sm:text-2xl  text-neutral-1000">
@@ -150,7 +154,9 @@ const TermsAndConditions: React.FC = () => {
         </section>
 
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">6. Usage Restrictions</h4>{" "}
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
+            6. Usage Restrictions
+          </h4>{" "}
           <ul className="list-disc px-8">
             <li>
               <p className="text-lg sm:text-2xl  text-neutral-1000">
@@ -178,7 +184,7 @@ const TermsAndConditions: React.FC = () => {
         </section>
         <section className="flex flex-col gap-4">
           {" "}
-          <h4 className="text-3xl font-semibold ">
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
             7. Returns and Cancellations
           </h4>{" "}
           <ul className="list-disc px-8">
@@ -197,7 +203,7 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
             8. Limitation of Liability
           </h4>{" "}
           <ul className="list-disc px-8">
@@ -214,7 +220,7 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
             9. Intellectual Property Rights
           </h4>{" "}
           <ul className="list-disc px-8">
@@ -234,7 +240,9 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">10. Amendments</h4>{" "}
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
+            10. Amendments
+          </h4>{" "}
           <ul className="list-disc px-8">
             <li>
               <p className="text-lg sm:text-2xl  text-neutral-1000">
@@ -251,7 +259,9 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">11. Governing Law</h4>{" "}
+          <h4 className="text-2xl sm:text-3xl  font-semibold ">
+            11. Governing Law
+          </h4>{" "}
           <ul className="list-disc px-8">
             <li>
               <p className="text-lg sm:text-2xl  text-neutral-1000">
@@ -269,7 +279,7 @@ const TermsAndConditions: React.FC = () => {
           </ul>
         </section>
         <section className="flex flex-col gap-4">
-          <h4 className="text-3xl font-semibold ">Contact Information</h4>{" "}
+          <h4 className="text-3xl  font-semibold ">Contact Information</h4>{" "}
           <p className="text-lg sm:text-2xl  text-neutral-1000 font-light">
             For any questions, reach out to us at:
           </p>
