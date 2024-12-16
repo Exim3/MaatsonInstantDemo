@@ -92,9 +92,12 @@ const Footer: React.FC = () => {
             </div>{" "}
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-1 text-[#121212] font-semibold">
-            <p className="px-2 md:border-r-4 md:border-[#0F1432]">
+            <Link
+              className="px-2 md:border-r-4 md:border-[#0F1432]"
+              to={"/termsandconditions"}
+            >
               Terms And Conditions
-            </p>
+            </Link>
             <p className="px-2 md:border-r-4 md:border-[#0F1432]">
               Privacy Policy
             </p>
