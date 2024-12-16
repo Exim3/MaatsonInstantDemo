@@ -137,14 +137,38 @@ const About: React.FC = () => {
               Our Services{" "}
             </p>{" "}
             <div className="flex items-center gap-6 flex-wrap justify-center">
-              <ServiceChips serviceName={"Fabricated Container"} />
-              <ServiceChips serviceName={"NVOCC liner services"} />
-              <ServiceChips serviceName={"Custom Clearance"} />
-              <ServiceChips serviceName={"Freight Forwarding - Air"} />
-              <ServiceChips serviceName={"Freight Forwarding - Sea"} />
-              <ServiceChips serviceName={"Warehousing"} />
-              <ServiceChips serviceName={"Trading and Leasing of Container"} />
-              <ServiceChips serviceName={"Export"} />
+              <ServiceChips
+                serviceName={"Trading of Container"}
+                navigateLink={"https://www.maatson.com/trading-of-containers/"}
+              />
+              <ServiceChips
+                serviceName={"NVOCC liner services"}
+                navigateLink={"https://www.maatson.com/nvocc-liner-services/"}
+              />
+              <ServiceChips
+                serviceName={"Custom Clearance"}
+                navigateLink={"https://www.maatson.com/custom-clearance/"}
+              />
+              <ServiceChips
+                serviceName={"Freight Forwarding - Air"}
+                navigateLink={"https://www.maatson.com/freight-forwarding-air/"}
+              />
+              <ServiceChips
+                serviceName={"Freight Forwarding - Sea"}
+                navigateLink={"https://www.maatson.com/freight-forwarding-sea/"}
+              />
+              <ServiceChips
+                serviceName={"Warehousing"}
+                navigateLink={"https://www.maatson.com/warehousing/"}
+              />
+              <ServiceChips
+                serviceName={"Logistics Services"}
+                navigateLink={"https://www.maatson.com/logistics-services/"}
+              />
+              <ServiceChips
+                serviceName={"Export"}
+                navigateLink={"https://www.maatson.com/export/"}
+              />
             </div>
             <p>Feel free to check out our logistics services!</p>{" "}
           </div>
@@ -157,10 +181,17 @@ const About: React.FC = () => {
 
 export default About;
 
-const ServiceChips: React.FC<{ serviceName: string }> = ({ serviceName }) => {
+const ServiceChips: React.FC<{ serviceName: string; navigateLink: string }> = ({
+  serviceName,
+  navigateLink,
+}) => {
   return (
     <>
-      <div className="bg-secondary-300 rounded-3xl ">
+      <a
+        className="bg-secondary-300 rounded-3xl cursor-pointer"
+        href={navigateLink}
+        target="_blank"
+      >
         <div className="flex items-center justify-center gap-4 p-2 border-4 border-white border-opacity-40 rounded-3xl text-sm">
           <p>{serviceName}</p>
 
@@ -171,7 +202,7 @@ const ServiceChips: React.FC<{ serviceName: string }> = ({ serviceName }) => {
             </span>
           </div>
         </div>
-      </div>
+      </a>
     </>
   );
 };
