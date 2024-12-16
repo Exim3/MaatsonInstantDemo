@@ -35,19 +35,20 @@ const Contact: React.FC = () => {
             <LocationCard
               title={"Registered Office"}
               content={"NO: 6, Shastri Nagar, Kodungaiyur, Chennai-600118"}
-              isBgPrimary={false}
+              mapLink={"https://maps.app.goo.gl/wipNiYiG3VTLrpRw7"}
             />
             <LocationCard
               title={"Corporate Office"}
               content={
                 "Tower C,8th floor, Kosmo One, Sai nagar, 3rd Main Road, Mogappair, West Ambattur Chennai-600058"
               }
-              isBgPrimary={true}
+              isBgPrimary
+              mapLink={"https://maps.app.goo.gl/XUfBei16MJhMWWsF9"}
             />
             <LocationCard
               title={"Warehouse"}
               content={"No: 703/192 Vijay Nagar vilangatupakkam Chennai-52"}
-              isBgPrimary={false}
+              mapLink={"https://maps.app.goo.gl/5zxYHrnRjUFWdVxd9"}
             />
           </div>
         </div>

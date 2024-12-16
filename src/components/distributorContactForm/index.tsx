@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GroupField from "../groupField";
 import useToast from "../../hooks/useToast";
 import emailjs from "emailjs-com";
+import { statesOfIndia } from "../../data/statesData";
 
 const DistributerContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -176,7 +177,7 @@ const DistributerContactForm: React.FC = () => {
             type={"dropdown"}
             placeholder={""}
             selectValue={"Choose Location"}
-            options={[{ label: "Chennai", value: "Chennai" }]}
+            options={statesOfIndia}
             onChange={handleChange}
             error={formError.location}
           />

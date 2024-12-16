@@ -3,7 +3,7 @@ import distributionImage2 from "/images/distributerImage2.png";
 import { FreedomIcon } from "../../components/icons";
 import DistributorShip from "../../components/distributionForm";
 import DirectorImage from "/images/director.png";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Distributorship: React.FC = () => {
   const location = useLocation();
@@ -43,9 +43,9 @@ const Distributorship: React.FC = () => {
               homes and offices. Join us in shaping sustainable and adaptable
               spaces that meet the evolving demands of your region.
             </p>
-            <div className="text-center">
+            <Link className="text-center" to={"/contact"}>
               <button className="btn-secondary-yellow">Contact Now</button>
-            </div>
+            </Link>
             <div className="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm">
               <span className="border-2 bg-neutral-100 text-primary border-primary-100 px-4 py-2 rounded-2xl">
                 No Deposit Required
@@ -114,7 +114,7 @@ const Distributorship: React.FC = () => {
                   </span>
                   <div className="flex flex-col gap-3 text-neutral-1000">
                     <h4 className="text-2xl font-semibold">
-                      Free Digital marketing service
+                      Digital marketing service
                     </h4>
                     <p className="text-xl">
                       We provide digital marketing services and lead generation
@@ -134,7 +134,9 @@ const Distributorship: React.FC = () => {
                     02
                   </span>
                   <div className="flex flex-col gap-3 text-neutral-1000">
-                    <h4 className="text-2xl font-semibold">Complete Freedom</h4>
+                    <h4 className="text-2xl font-semibold">
+                      Complete Freedom on pricing
+                    </h4>
                     <p className="text-xl">
                       Here are no sales restrictions—you're free to set your own
                       prices based on your location and customer needs..

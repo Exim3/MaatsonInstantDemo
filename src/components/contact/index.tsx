@@ -146,7 +146,7 @@ const ContactSection: React.FC = () => {
               Contact Us
             </p>
             <h3 className="text-4xl md:text-5xl font-semibold ">
-              Your Dream Container Home is Just a Message Away!
+              Your Dream Home (Container) is Just a Message Away!
             </h3>
           </div>
           <p className="text-xl">

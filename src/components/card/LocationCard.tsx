@@ -4,8 +4,9 @@ import { LocationIcon } from "../icons";
 const LocationCard: React.FC<{
   title: string;
   content: string;
-  isBgPrimary: boolean;
-}> = ({ title, content, isBgPrimary }) => {
+  isBgPrimary?: boolean;
+  mapLink: string;
+}> = ({ title, content, isBgPrimary, mapLink }) => {
   return (
     <div
       className={` max-w-xs  md:w-[360px] lg:w-full  px-6 py-4 rounded-2xl border-2 h-auto border-primary flex flex-col justify-between break-after-all gap-6 ${
@@ -33,9 +34,14 @@ const LocationCard: React.FC<{
           {content}
         </p>
       </div>
-      <button className="btn-secondary border-2 border-primary bg-white hover:text-white">
-        Get Directions
-      </button>
+      <a
+        href={mapLink}
+        target="_blank"
+        className="btn-secondary border-2 border-primary bg-white hover:text-white"
+      >
+        {" "}
+        <button className="">Get Directions</button>
+      </a>
     </div>
   );
 };

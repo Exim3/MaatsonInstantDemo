@@ -108,9 +108,9 @@ const Home: React.FC = () => {
       isOpen: false,
     },
     {
-      summary: "Are container houses safe in extreme weather conditions?",
+      summary: "Are container houses safe in various weather conditions?",
       detail:
-        "Maatson container houses are built to withstand extreme weather conditions, ensuring safety and durability. Their robust design provides reliable shelter in any climate.",
+        "Container houses are durable and adaptable to various weather conditions, including rain, wind, and different climates. With proper installation and insulation, provide a safe and comfortable living environment.",
       isOpen: false,
     },
     {
@@ -128,7 +128,7 @@ const Home: React.FC = () => {
     {
       summary: "How long does it take to build a container house or office?",
       detail:
-        "Maatson container houses and offices can be assembled within 24 hours, offering a quick and efficient solution for your space needs.",
+        "Maatson container houses and offices can be assembled with min 24 working hours, offering a quick and efficient solution for your space needs.",
       isOpen: false,
     },
     {
@@ -148,10 +148,14 @@ const Home: React.FC = () => {
 
   const handleSummaryToggle = (index: number) => {
     setQuestionData((prev) =>
-      prev.map((item, i) =>
-        i === index
-          ? { ...item, isOpen: !item.isOpen } // Toggle the isOpen property
-          : item
+      prev.map(
+        (item, i) => {
+          // Toggle isOpen for the clicked item, set others to false
+          if (i === index) {
+            return { ...item, isOpen: !item.isOpen };
+          }
+          return { ...item, isOpen: false };
+        } // Set all other isOpen to false
       )
     );
   };
@@ -278,7 +282,7 @@ const Home: React.FC = () => {
               <div className="flex flex-col gap-6 text-center w-full lg:w-2/3">
                 <div className="flex flex-col gap-3 justify-center">
                   <h3 className="text-3xl md:text-4xl">
-                    Become a Distributer of Maatson
+                    Become a Distributor of Maatson
                   </h3>
                   <p className="text-2xl">container House / Office in India </p>
                 </div>
@@ -313,7 +317,7 @@ const Home: React.FC = () => {
                   Loading Capacity
                 </p>
                 <h3 className="text-3xl md:text-4xl text-baseBlack">
-                  A 32ft Closed Container Truck can hold 7 SET OF Assembly
+                  A 32ft Closed Container Truck can hold 5 sets OF Assembly
                   Containers{" "}
                 </h3>{" "}
                 <p className="text-neutral-1000 font-semibold text-3xl">
@@ -456,6 +460,7 @@ const QuestionBox: React.FC<{
     <>
       <div
         className={`flex p-4 gap-4 items-center border-2  justify-between rounded-md shadow-primary-sd border-primary-100 text-baseBlack ${className}`}
+        onClick={toggleSummary}
       >
         <p className="text-secondary-900 text-4xl">
           {index > 9 ? index : `0${index}`}
@@ -471,7 +476,7 @@ const QuestionBox: React.FC<{
             )}
           </div>
         </div>
-        <div className="cursor-pointer" onClick={toggleSummary}>
+        <div className="cursor-pointer">
           {isOpen ? <SummaryMinusIcon /> : <SummaryAddIcon />}
         </div>
       </div>

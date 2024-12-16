@@ -26,7 +26,9 @@ const ModelCard: React.FC<{
           <div className="flex flex-col gap-2">
             <p className="text-neutral-700">Size</p>
             <h4 className="text-xl text-baseBlack font-semibold">
-              As per customer Requirement
+              min. size 204 x 10b x 9 h approx.,
+              <br />
+              Can be extended as per customer requirements.{" "}
             </h4>
           </div>
           <div className="flex flex-col gap-2">
@@ -53,7 +55,7 @@ const ModelCard: React.FC<{
             Book Now
           </button>
           <a
-            href={`https://wa.me/98796557?text="requirement Modal-${modelNumber}"`}
+            href={`https://wa.me/9003052529?text="requirement Modal-${modelNumber}"`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary-outline  w-full sm:flex-1"

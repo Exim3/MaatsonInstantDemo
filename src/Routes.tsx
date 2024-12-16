@@ -9,6 +9,8 @@ const Distributorship = lazy(() => import("./pages/distributorship"));
 const Models = lazy(() => import("./pages/models"));
 const Enquiry = lazy(() => import("./pages/enquiry"));
 const TermsAndConditions = lazy(() => import("./pages/termAndConditions"));
+const CookiePolicy = lazy(() => import("./pages/cookiePolicy"));
+const PrivacyPolicy = lazy(() => import("./pages/privacyPolicy"));
 
 const AllRoutes: React.FC = () => {
   return (
@@ -28,6 +30,8 @@ const AllRoutes: React.FC = () => {
             <Route path="distributorship" element={<Distributorship />} />
             <Route path="models" element={<Models />} />
             <Route path="termsandconditions" element={<TermsAndConditions />} />
+            <Route path="privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="cookiepolicy" element={<CookiePolicy />} />
           </Route>
           <Route path="/enquiryform" element={<Enquiry />}></Route>
         </Routes>
