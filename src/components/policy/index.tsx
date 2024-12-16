@@ -38,7 +38,7 @@ const Policy: React.FC<Data> = (data) => {
                 {listdata.title}
               </h4>{" "}
               {listdata.subTitle && (
-                <h5 className="text-2xl text-neutral-1000 font-semibold">
+                <h5 className="text-lg sm:text-2xl  text-neutral-1000 font-semibold">
                   {listdata.subTitle}
                 </h5>
               )}
