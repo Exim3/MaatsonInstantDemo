@@ -85,7 +85,13 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="flex gap-3 items-center justify-center lg:justify-start">
                   <FaceBookIcon size={20} color="#232D70" />
-                  <p>Facebook</p>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61566622751970&mibextid=ZbWKwL"
+                    target="_blank"
+                  >
+                    {" "}
+                    <p>Facebook</p>
+                  </a>
                 </div>
                 <div className="flex gap-3 items-center justify-center lg:justify-start">
                   <TwitterIcon size={20} color="#232D70" />

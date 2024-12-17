@@ -9,12 +9,12 @@ import featureIcon2 from "/images/featureIcon2.png";
 import featureIcon3 from "/images/featureIcon3.png";
 import advantageBanner from "/images/advantageBanner.png";
 import distributerImage from "/images/distributerImage.png";
-import design1 from "/images/design1.png";
-import design2 from "/images/design2.png";
-import design3 from "/images/design3.png";
-import design4 from "/images/design4.png";
-import design5 from "/images/design5.png";
-import design6 from "/images/design6.png";
+import design1 from "/images/model1.png";
+import design2 from "/images/model2.png";
+import design3 from "/images/model3.png";
+import design4 from "/images/model4.png";
+import design5 from "/images/model5.png";
+import design6 from "/images/model6.png";
 import truck from "/images/truck.png";
 import indicatorImage from "/images/indicatorImage.png";
 import { DesignBox, FeatureBox } from "../../components/box";
@@ -27,10 +27,11 @@ import {
 import { TestimonalSlider } from "../../components/slick/TestimonalSlick";
 import { ContainerCarousel } from "../../components/slick/ContainerCarousel";
 import { Link, useNavigate } from "react-router-dom";
+import { initializeAOS } from "../../utils/aosUtils";
+import useWindowWidth from "../../utils/useWindowWidth";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-
   const handleNavigateDistributor = () => {
     // navigate("/distributorship", {
     //   state: { scrollTo: "distributorshipDetail-section" },
@@ -159,8 +160,20 @@ const Home: React.FC = () => {
       )
     );
   };
+  const windowWidth = useWindowWidth(); // Get the current window width
+
+  const fadeupanimation = windowWidth <= 900 ? "" : "fade-up";
+
   useEffect(() => {
     document.title = "Maatson Instant Homes";
+  }, []);
+  useEffect(() => {
+    // Initialize AOS when the component is mounted
+    initializeAOS({
+      duration: 800, // Animation duration in ms
+      offset: 200, // Start animation when the element is 200px from the viewport
+      easing: "ease-in-out", // Easing function for the animation
+    });
   }, []);
   return (
     <>
@@ -176,10 +189,9 @@ const Home: React.FC = () => {
                 <div className="py-2 gap-4 flex flex-col text-center">
                   <div className="flex flex-col gap-1  text-5xl lg:text-6xl font-semibold">
                     <h1 className=" text-secondary font-robotoSlab">
-                      Transform Your Space{" "}
+                      Transform Your Space
                     </h1>
                     <span className="text-baseBlack">
-                      {" "}
                       Instantly with Container Homes and Offices!
                     </span>
                   </div>
@@ -201,7 +213,7 @@ const Home: React.FC = () => {
                     </div>
                     <p className="text-accent-400">
                       Easy assembly, ready fast! Contact us for details!
-                    </p>{" "}
+                    </p>
                   </div>
                 </div>
                 <div className="hidden gallery-desktop lg:flex justify-center items-center gap-5">
@@ -238,7 +250,10 @@ const Home: React.FC = () => {
                   Why Choose Our Container Homes And Office
                 </h3>
               </div>
-              <div className="flex flex-wrap lg:grid lg:grid-cols-3 items-center gap-8 justify-center">
+              <div
+                data-aos={fadeupanimation}
+                className="flex flex-wrap lg:grid lg:grid-cols-3 items-center gap-8 justify-center"
+              >
                 {featureBoxes.map((item) => (
                   <FeatureBox
                     key={item.title}
@@ -253,19 +268,25 @@ const Home: React.FC = () => {
           </div>
           {/* ADVANTAGES */}
           <div className="advantages grid grid-cols-1 lg:grid-cols-2 container mx-auto items-center justify-center gap-10">
-            <div className={`flex items-center justify-center `}>
+            <div
+              className={`flex items-center justify-center h-full rounded-lg`}
+              data-aos={fadeupanimation}
+            >
               <img
                 src={advantageBanner}
                 alt="advantage-Banner"
-                className="object-contain"
+                className="object-fill h-full rounded-lg"
               />
             </div>
-            <div className="flex flex-col gap-8 items-center lg:justify-between ">
+            <div
+              className="flex flex-col gap-8 items-center lg:justify-between "
+              data-aos={fadeupanimation}
+            >
               <div className="flex flex-col gap-4">
                 <p className="text-primary-700 font-semibold text-2xl text-center  font-robotoSlab ">
                   Advantages
                 </p>
-                <h3 className="text-3xl md:text-4xl text-baseBlack text-center">
+                <h3 className="text-3xl md:text-4xl text-baseBlack text-center lg:text-start">
                   Why Choose Our Container Homes And Office
                 </h3>{" "}
               </div>
@@ -436,9 +457,13 @@ const IconTextBox: React.FC<{
   text: string;
   className?: string;
 }> = ({ icon, text, className }) => {
+  const windowWidth = useWindowWidth(); // Get the current window width
+  const fadeupanimation = windowWidth <= 900 ? "" : "fade-up";
+
   return (
     <>
       <div
+        data-aos={fadeupanimation}
         className={`flex px-4 py-3 gap-4 items-center text-accent ${className}`}
       >
         <div className="">{icon}</div>
@@ -456,11 +481,16 @@ const QuestionBox: React.FC<{
   className?: string;
   toggleSummary: () => void;
 }> = ({ summary, detail, className, index, isOpen, toggleSummary }) => {
+  const windowWidth = useWindowWidth(); // Get the current window width
+
+  const rightanimation = windowWidth <= 900 ? "" : "fade-right";
+  const leftanimation = windowWidth <= 900 ? "" : "fade-left";
   return (
     <>
       <div
-        className={`flex p-4 gap-4 items-center border-2  justify-between rounded-md shadow-primary-sd border-primary-100 text-baseBlack ${className}`}
+        className={`flex p-4 gap-4 items-center border-2 cursor-pointer justify-between rounded-md shadow-primary-sd border-primary-100 text-baseBlack ${className}`}
         onClick={toggleSummary}
+        data-aos={index % 2 === 0 ? rightanimation : leftanimation}
       >
         <p className="text-secondary-900 text-4xl">
           {index > 9 ? index : `0${index}`}
