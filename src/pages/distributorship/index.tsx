@@ -159,7 +159,6 @@ const Distributorship: React.FC = () => {
                   <FreedomIcon size={72} />
                 </span>
                 <div className="flex flex-col gap-3 text-neutral-1000">
-                  <h4 className="text-2xl font-semibold">Complete Freedom</h4>
                   <p className="text-xl">
                     Distributors are required to purchase one container and have
                     a minimum of 300 square feet of space available for placing
