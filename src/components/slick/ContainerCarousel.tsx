@@ -31,7 +31,10 @@ export const ContainerCarousel: React.FC<{
   return (
     <Slider {...settings}>
       {data.map((item, index) => (
-        <div className="flex items-center justify-center rounded-xl w-80 h-80">
+        <div
+          className="flex items-center justify-center rounded-xl w-80 h-80"
+          key={index}
+        >
           <img
             src={item}
             alt={`container${index}`}

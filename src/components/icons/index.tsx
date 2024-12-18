@@ -173,7 +173,7 @@ export const AdvantageIcon: React.FC<IconProps> = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_623_5293)">
+      <g clipPath="url(#clip0_623_5293)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -332,9 +332,9 @@ export const HamburgerIcon: React.FC<IconProps> = ({
       <path
         d="M1 1H19M1 8H19M1 15H19"
         stroke={color}
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

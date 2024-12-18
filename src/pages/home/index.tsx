@@ -85,13 +85,31 @@ const Home: React.FC = () => {
       rating: 4.5,
       content:
         "Our container office from Maatson was assembled in just a day, and it's perfect for our growing, business. The flexibility and modern design exceeded our expectations!",
-      author: "-Ravi S., Chennai",
+      author: "-Iyappan, Gujarat",
     },
     {
       rating: 4.5,
       content:
         "Our container office from Maatson was assembled in just a day, and it's perfect for our growing, business. The flexibility and modern design exceeded our expectations!",
-      author: "-Ravi S., Chennai",
+      author: "-Karthick, Chennai",
+    },
+    {
+      rating: 4.5,
+      content:
+        "Our container office from Maatson was assembled in just a day, and it's perfect for our growing, business. The flexibility and modern design exceeded our expectations!",
+      author: "-Dias, Goa",
+    },
+    {
+      rating: 4.5,
+      content:
+        "Our container office from Maatson was assembled in just a day, and it's perfect for our growing, business. The flexibility and modern design exceeded our expectations!",
+      author: "-Ram, Maharastra",
+    },
+    {
+      rating: 4.5,
+      content:
+        "Our container office from Maatson was assembled in just a day, and it's perfect for our growing, business. The flexibility and modern design exceeded our expectations!",
+      author: "-Seema, Delhi",
     },
   ];
 
@@ -291,8 +309,11 @@ const Home: React.FC = () => {
                 </h3>{" "}
               </div>
               <div className="flex flex-col gap-2 text-2xl">
-                {advantages.map((item: string) => (
-                  <IconTextBox icon={<AdvantageIcon />} text={item} />
+                {advantages.map((item: string, index) => (
+                  <div key={index}>
+                    {" "}
+                    <IconTextBox icon={<AdvantageIcon />} text={item} />
+                  </div>
                 ))}
               </div>
             </div>
@@ -365,12 +386,14 @@ const Home: React.FC = () => {
             <div className="flex flex-col gap-3">
               {" "}
               <div className="grid grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {containerDesigns.map((item) => (
-                  <DesignBox
-                    modelNumber={item.modelNumber}
-                    img={item.img}
-                    alt={item.modelNumber}
-                  />
+                {containerDesigns.map((item, index) => (
+                  <div key={index}>
+                    <DesignBox
+                      modelNumber={item.modelNumber}
+                      img={item.img}
+                      alt={item.modelNumber}
+                    />
+                  </div>
                 ))}
               </div>
               <div className="flex items-center justify-center gap-3 cursor-pointer">
@@ -422,13 +445,15 @@ const Home: React.FC = () => {
           </div>
           <div className="max-w-[850px] w-full mx-auto flex flex-col gap-4">
             {questionData.map((item, index) => (
-              <QuestionBox
-                summary={item.summary}
-                detail={item.detail}
-                index={index + 1}
-                isOpen={item.isOpen}
-                toggleSummary={() => handleSummaryToggle(index)}
-              />
+              <div key={index}>
+                <QuestionBox
+                  summary={item.summary}
+                  detail={item.detail}
+                  index={index + 1}
+                  isOpen={item.isOpen}
+                  toggleSummary={() => handleSummaryToggle(index)}
+                />
+              </div>
             ))}
           </div>
           <div className="flex flex-col gap-6 text-center">

@@ -32,8 +32,8 @@ const Policy: React.FC<Data> = (data) => {
           </section>
         )}
         {data.listdata.length > 0 &&
-          data.listdata.map((listdata) => (
-            <section className="flex flex-col gap-4">
+          data.listdata.map((listdata, index) => (
+            <section className="flex flex-col gap-4" key={index}>
               <h4 className="text-2xl sm:text-3xl  font-semibold ">
                 {listdata.title}
               </h4>{" "}
@@ -44,8 +44,8 @@ const Policy: React.FC<Data> = (data) => {
               )}
               <ul className="list-disc px-8">
                 {listdata.content.length > 0 &&
-                  listdata.content.map((content) => (
-                    <li>
+                  listdata.content.map((content, index) => (
+                    <li key={index}>
                       <p className="text-lg sm:text-2xl  text-neutral-1000">
                         {content}
                       </p>

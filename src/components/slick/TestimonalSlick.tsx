@@ -15,8 +15,8 @@ export const TestimonalSlider: React.FC<{
   };
   return (
     <Slider {...settings}>
-      {data.map((item) => (
-        <div className="p-5 ">
+      {data.map((item, index) => (
+        <div className="p-5 " key={index}>
           <div className="flex flex-col gap-2 px-4 py-3 border border-neutral-800 text-neutral-800 font-semibold rounded-[8px_56px_8px_56px] text-center shadow-[16px_16px_0px_0px_rgba(55,71,178)] h-full w-full justify-center break-after-all">
             <div className="content">
               <span>

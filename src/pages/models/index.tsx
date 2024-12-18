@@ -76,12 +76,14 @@ const Models: React.FC = () => {
         imageLink={modelBanner}
       />
       <div className="container mx-auto   grid grid-cols-1 gap-6">
-        {cards.map((item) => (
-          <ModelCard
-            image={item.image}
-            modelNumber={item.modelNumber}
-            usages={item.usages}
-          />
+        {cards.map((item, index) => (
+          <div key={index}>
+            <ModelCard
+              image={item.image}
+              modelNumber={item.modelNumber}
+              usages={item.usages}
+            />
+          </div>
         ))}
       </div>
     </>
